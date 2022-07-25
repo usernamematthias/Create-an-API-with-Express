@@ -1,0 +1,51 @@
+{
+  "name": "storefront_backend",
+  "version": "0.1.0",
+  "description": "",
+  "main": "server.ts",
+  "scripts": {
+    "prettier": "prettier --config .prettierrc --write src/**/*.ts",
+    "lint": "eslint src/",
+    "jasmine": "npx jasmine",
+    "build": "rm -rf dist && npx tsc",
+    "start": "npm run build && node src/server.ts",
+    "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess \"node ./dist/server.js\"",
+    "test": "npm run build && db-migrate down && db-migrate down && db-migrate down && db-migrate down && db-migrate up && jasmine",
+    "tsc": "tsc"
+  },
+  "author": "Udacity",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jasmine": "^4.0.3",
+    "@types/jasmine-es6-promise-matchers": "^0.0.33",
+    "@types/node": "^18.0.0",
+    "@types/pg": "^7.14.7",
+    "@types/prettier": "^2.6.3",
+    "@types/supertest": "^2.0.12",
+    "@types/typescript": "^2.0.0",
+    "cors": "^2.8.5",
+    "jasmine": "^4.2.1",
+    "jasmine-es6-promise-matchers": "^2.1.2",
+    "jasmine-spec-reporter": "^7.0.0",
+    "jasmine-ts": "^0.3.0",
+    "nodemon": "^2.0.18",
+    "prettier": "^2.7.1",
+    "supertest": "^6.2.3",
+    "ts-node": "^10.8.1",
+    "tsc-watch": "^4.2.9",
+    "typescript": "^4.7.4"
+  }
+}
